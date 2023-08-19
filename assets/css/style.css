@@ -185,7 +185,7 @@ h6 {
 }
 
 #header .logo {
-  font-size: 28px;
+  font-size: 22px;
   margin: 0;
   padding: 0;
   line-height: 1;
@@ -638,6 +638,87 @@ h6 {
   100% {
     transform: scale(1, 1);
     opacity: 0;
+  }
+}
+
+/*--------------------------------------------------------------
+# Coming Soon Section
+--------------------------------------------------------------*/
+#cusoon {
+  width: 100%;
+  height: 80vh;
+
+  background-size: cover;
+  position: relative;
+  padding: 0;
+}
+
+#cusoon:before {
+  content: "";
+  background: rgba(0, 0, 0, 0.5);
+  position: absolute;
+  bottom: 0;
+  top: 0;
+  left: 0;
+  right: 0;
+}
+
+#cusoon .container {
+  padding-top: 110px;
+}
+
+@media (max-width: 992px) {
+  #cusoon .container {
+    padding-top: 98px;
+  }
+}
+
+#cusoon h1 {
+  margin: 0;
+  font-size: 48px;
+  font-weight: 700;
+  line-height: 56px;
+  color: #fff;
+  font-family: "Poppins", sans-serif;
+}
+
+#cusoon h1 span {
+  color: #cda45e;
+}
+
+#cusoon h2 {
+  color: #cda45e;
+  margin-bottom: 10px 0 0 0;
+  font-size: 22px;
+  font-family: "Poppins", sans-serif;
+}
+
+@media (min-width: 1024px) {
+  #cusoon {
+    background-attachment: fixed;
+  }
+}
+
+@media (max-height: 500px) {
+  #cusoon {
+    height: auto;
+  }
+
+  #cusoon .container {
+    padding-top: 130px;
+    padding-bottom: 60px;
+  }
+}
+
+@media (max-width: 768px) {
+  #cusoon h1 {
+    font-size: 28px;
+    line-height: 36px;
+  }
+
+  #cusoon h2 {
+    font-size: 18px;
+    line-height: 24px;
   }
 }
 

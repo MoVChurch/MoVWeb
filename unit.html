@@ -29,11 +29,13 @@
 
   <!-- Template Main CSS File -->
   <link href="assets/css/style.css" rel="stylesheet">
-
+  <script src="assets/js/Gmap.js"></script>
 </head>
 
 <body>
-
+  <div id="map">
+    i am here
+  </div> 
  <!-- ======= Top Bar ======= -->
  <div id="topbar" class="d-flex align-items-center fixed-top">
   <div class="container d-flex justify-content-center justify-content-md-between">
@@ -81,6 +83,7 @@
     </div>
   </header><!-- End Header -->
 
+  
   <main id="main">
    
     <section class="breadcrumbs">
@@ -97,100 +100,344 @@
       </div>
     </section>
 
-    <section id="massTime" class="massTime">
+    <section id="massTime" class="massTime menu section-bg">
       <div class="container" data-aos="fade-up">
 
         <div class="section-title">
           <h2>Unit Info</h2>
           <p>Representatives</p>
         </div>
+        
+    <!-- ======= Filters ======= -->     
+        <div class="d-flex mb-3 justify-content-left">
+          <div class="dropdown p-1">
+            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Family Units
+            </button>
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+              <ul id="menu-flters">
+                <li data-filter="*" class="filter-active dropdown-item">All</li>
+                <li data-filter=".filter-Alphonsa" class="dropdown-item">St.Alphonsa</li>
+                <li data-filter=".filter-Antony" class="dropdown-item">St.Antony</li>
+                <li data-filter=".filter-Francis" class="dropdown-item">St.Francis Assisi</li>
+                <li data-filter=".filter-George" class="dropdown-item">St.George</li>
+                <li data-filter=".filter-Cross" class="dropdown-item">Holy Cross</li>
+                <li data-filter=".filter-Family" class="dropdown-item">Holy Family</li>
+                <li data-filter=".filter-Infant" class="dropdown-item">Infant Jesus</li>
+                <li data-filter=".filter-Joseph" class="dropdown-item">St.Joseph</li>
+                <li data-filter=".filter-Jude" class="dropdown-item">St.Jude</li>
+                <li data-filter=".filter-Chavara" class="dropdown-item">St.Chavara</li>
+                <li data-filter=".filter-Flower" class="dropdown-item">Little Flower</li>
+                <li data-filter=".filter-Goretti" class="dropdown-item">St.Maria Goretti</li>
+                <li data-filter=".filter-Mary" class="dropdown-item">St.Mary</li>
+                <li data-filter=".filter-Teresa" class="dropdown-item">St.Mother Teresa</li>
+                <li data-filter=".filter-OLL" class="dropdown-item">OLL</li>
+                <li data-filter=".filter-Paul" class="dropdown-item">St.Paul</li>
+                <li data-filter=".filter-OLPS" class="dropdown-item">OLPS</li>
+                <li data-filter=".filter-Peter" class="dropdown-item">St.Peter</li>
+                <li data-filter=".filter-Heart" class="dropdown-item">Sacred Heart</li>
+                <li data-filter=".filter-Sebastian" class="dropdown-item">St.Sebastian</li>
+                <li data-filter=".filter-Thomas" class="dropdown-item">St.Thomas</li>
+              </ul>
+            </div>
+          </div>
+          <div class="dropdown p-1">
+            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Location
+            </button>
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+              <ul id="menu-flters">
+                <li data-filter="*" class="filter-active dropdown-item">All</li>
+                <li data-filter=".filter-1Km" class="dropdown-item">1Km from Church</li>
+                <li data-filter=".filter-3Km" class="dropdown-item">1Km - 3Km</li>
+                <li data-filter=".filter-5Km" class="dropdown-item">3Km - 5Km</li>
+                <li data-filter=".filter-8Km" class="dropdown-item">5Km - 8Km</li>
+                <li data-filter=".filter-10Km" class="dropdown-item">8Km - 10Km</li>
+              </ul>
+            </div>
+          </div>
+          <div class="dropdown p-1">
+            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Zones
+            </button>
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+              <ul id="menu-flters">
+                <li data-filter="*" class="filter-active dropdown-item">All</li>
+                <li data-filter=".filter-Nazareth" class="dropdown-item">Nazareth</li>
+                <li data-filter=".filter-Bethlehem" class="dropdown-item">Bethlehem</li>
+                <li data-filter=".filter-Jerusalem" class="dropdown-item">Jerusalem</li>
+                <li data-filter=".filter-Jericho" class="dropdown-item">Jericho</li>
+                <li data-filter=".filter-Calvary" class="dropdown-item">Calvary</li>
+                <li data-filter=".filter-Jordan" class="dropdown-item">Jordan</li>
+                <li data-filter=".filter-Tabor" class="dropdown-item">Tabor</li>
+                <li data-filter=".filter-Cana" class="dropdown-item">Cana</li>
+                <li data-filter=".filter-Galilee" class="dropdown-item">Galilee</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+    <!-- ======= END Filters ======= -->               
 
-        <div class="row">
-          <div class="col-lg-3 col-md-3 mt-4 mt-lg-4">
+        <div class="row menu-container" data-aos="fade-up" data-aos-delay="200">
+          <div class="col-lg-3 col-md-4 mt-4 mt-lg-4 menu-item filter-Cross filter-Nazareth filter-1Km">
             <div class="box h-100" data-aos="zoom-in" data-aos-delay="100">
               <span>Holy Cross</span>
-              <h4>Nazareth Zone</h4>
-              <p>President: Jose KL</p>
-              <p>Secretary: Mary Martha</p>
-              <p>Treasurer: George Mathur Jose</p>
+              <h3>Feast Day - SEP 14</h3>
+              <p>President: BINO JOSEPH</p>
+              <p>Secretary: SUMI SAJAI</p>
+              <p>Treasurer: VISMAY VINOY</p>
+              <p>Zone: Nazareth</p>
+              <div class="label-top">29 F</div>
             </p>
             </div>
           </div>
-          <div class="col-lg-3 col-md-3 mt-4 mt-lg-4">
+
+          <div class="col-lg-3 col-md-4 mt-4 mt-lg-4 menu-item filter-Alphonsa filter-Galilee filter-1Km">
+            <div class="box h-100" data-aos="zoom-in" data-aos-delay="100">
+              <span>St.Alphonsa</span>
+              <h3>Feast Day - JUL 28</h3>
+              <p>President: Rahul George</p>
+              <p>Secretary: Vinita David</p>
+              <p>Treasurer: Jessin Sijo</p>
+              <p>Zone: Galilee</p>
+              <div class="label-top">16 F</div>
+            </p>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-4 mt-4 mt-lg-4 menu-item filter-Jude filter-Bethlehem filter-8Km">
+            <div class="box h-100" data-aos="zoom-in" data-aos-delay="100">
+              <span>St.Jude</span>
+              <h3>Feast Day - OCT 28</h3>
+              <p>President: Baby Parapuram</p>
+              <p>Secretary: Riya Justin</p>
+              <p>Treasurer: Santosh Panicker</p>
+              <p>Zone: Bethlehem</p>
+              <div class="label-top">18 F</div>
+            </p>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-4 mt-4 mt-lg-4 menu-item filter-Peter filter-Jericho filter-5Km">
+            <div class="box h-100" data-aos="zoom-in" data-aos-delay="100">
+              <span>St.Peter</span>
+              <h3>Feast Day - JUN 29</h3>
+              <p>President: Litty Joseph</p>
+              <p>Secretary: Treeza Johny</p>
+              <p>Treasurer: Joseph Johny</p>
+              <p>Zone: Jericho</p>
+              <div class="label-top">14 F</div>
+            </p>
+            </div>
+          </div>
+     
+          <div class="col-lg-3 col-md-4 mt-4 mt-lg-4 menu-item filter-Teresa filter-Galilee filter-3Km">
+            <div class="box h-100" data-aos="zoom-in" data-aos-delay="100">
+              <span>St.Mother Teresa</span>
+              <h3>Feast Day - SEP 05</h3>
+              <p>President: Delighten Koola</p>
+              <p>Secretary: Prasanna George</p>
+              <p>Treasurer: Bincy Thomas</p>
+              <p>Zone: Galilee</p>
+              <div class="label-top">26 F</div>
+            </p>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-4 mt-4 mt-lg-4 menu-item filter-Family filter-Jericho filter-5Km">
+            <div class="box h-100" data-aos="zoom-in" data-aos-delay="100">
+              <span>Holy Family</span>
+              <h3>Feast Day - 1st SUN after Christmas</h3>
+              <p>President: Joseph Anthony Kannel </p>
+              <p>Secretary: John Varghese Kottayadiyil</p>
+              <p>Treasurer: Julimol Kurian</p>
+              <p>Zone: Jericho</p>
+              <div class="label-top">22 F</div>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-4 mt-4 mt-lg-4 menu-item filter-Heart filter-Nazareth filter-1Km">
             <div class="box h-100" data-aos="zoom-in" data-aos-delay="100">
               <span>Sacred Heart</span>
-              <h4>Nazareth Zone</h4>
-              <p>President: Jose KL</p>
-              <p>Secretary: Mary Martha</p>
-              <p>Treasurer: George Mathur Jose</p>
-            </p>
+              <h3>Feast Day - 19th day (Friday) after Pentecost</h3>
+              <p>President: Rixon Stephen</p>
+              <p>Secretary: Kripa Seby</p>
+              <p>Treasurer: Johnson Jose</p>
+              <p>Zone: Nazareth</p>
+              <div class="label-top">19 F</div>
             </div>
           </div>
-          <div class="col-lg-3 col-md-3 mt-4 mt-lg-4">
+
+          <div class="col-lg-3 col-md-4 mt-4 mt-lg-4 menu-item filter-Mary filter-Cana filter-3Km">
             <div class="box h-100" data-aos="zoom-in" data-aos-delay="100">
-              <span>St. Thomas</span>
-              <h4>Nazareth Zone</h4>
-              <p>President: Jose KL</p>
-              <p>Secretary: Mary Martha</p>
-              <p>Treasurer: George Mathur Jose</p>
-            </p>
+              <span>St.Mary</span>
+              <h3>Feast Day - AUG 15</h3>
+              <p>President: Cicily Francis </p>
+              <p>Secretary: Linu Shoney </p>
+              <p>Treasurer: Leju Lonappan </p>
+              <p>Zone: Cana</p>
+              <div class="label-top">15 F</div>
             </div>
           </div>
-          <div class="col-lg-3 col-md-3 mt-4 mt-lg-4">
+       
+          <div class="col-lg-3 col-md-4 mt-4 mt-lg-4 menu-item filter-Paul filter-Jerusalem filter-5Km">
             <div class="box h-100" data-aos="zoom-in" data-aos-delay="100">
-              <span>St. Theresa</span>
-              <h4>Nazareth Zone</h4>
-              <p>President: Jose KL</p>
-              <p>Secretary: Mary Martha</p>
-              <p>Treasurer: George Mathur Jose</p>
-            </p>
+              <span>St.Paul</span>
+              <h3>Feast Day - JUN 29</h3>
+              <p>President: Pinto Paulson Pallipatt</p>
+              <p>Secretary: Jini Santo</p>
+              <p>Treasurer: Delvin Denny</p>
+              <p>Zone: Jerusalem</p>
+              <div class="label-top">16 F</div>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-4 mt-4 mt-lg-4 menu-item filter-OLL filter-Tabor filter-3Km">
+            <div class="box h-100" data-aos="zoom-in" data-aos-delay="100">
+              <span>OLL</span>
+              <h3>Feast Day - FEB 11</h3>
+              <p>President: Sunny Kulangara </p>
+              <p>Secretary: Teena Shaju Kodian</p>
+              <p>Treasurer: Lovely Joseph </p>
+              <p>Zone: Tabor</p>
+              <div class="label-top">15 F</div>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-4 mt-4 mt-lg-4 menu-item filter-Sebastian filter-Jerusalem filter-10Km">
+            <div class="box h-100" data-aos="zoom-in" data-aos-delay="100">
+              <span>St.Sebastian</span>
+              <h3>Feast Day - JAN 20</h3>
+              <p>President: WILSON NEELAMKAVIL</p>
+              <p>Secretary: GISHA JOSE</p>
+              <p>Treasurer: JENCY BENY</p>
+              <p>Zone: Jerusalem</p>
+              <div class="label-top">23 F</div>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-4 mt-4 mt-lg-4 menu-item filter-Joseph filter-Calvary filter-3Km">
+            <div class="box h-100" data-aos="zoom-in" data-aos-delay="100">
+              <span>St.Joseph</span>
+              <h3>Feast Day - MAR 19</h3>
+              <p>President: Shaju Thomas Kottarathil </p>
+              <p>Secretary: Bincy James </p>
+              <p>Treasurer: Jifin Shaju Kottarathil </p>
+              <p>Zone: Calvary</p>
+              <div class="label-top">4 F</div>
+            </div>
+          </div>
+        
+          <div class="col-lg-3 col-md-4 mt-4 mt-lg-4 menu-item filter-Flower filter-Cana filter-5Km">
+            <div class="box h-100" data-aos="zoom-in" data-aos-delay="100">
+              <span>Little Flower</span>
+              <h3>Feast Day - OCT 01</h3>
+              <p>President: M.P. Varghese</p>
+              <p>Secretary: Manju Christopher</p>
+              <p>Treasurer: Elaine James</p>
+              <p>Zone: Cana</p>
+              <div class="label-top">14 F</div>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-4 mt-4 mt-lg-4 menu-item filter-OLPS filter-Tabor filter-5Km">
+            <div class="box h-100" data-aos="zoom-in" data-aos-delay="100">
+              <span>OLPS</span>
+              <h3>Feast Day - JUN 27</h3>
+              <p>President: Babu M.K.</p>
+              <p>Secretary: Sani Pious </p>
+              <p>Treasurer: Aleena Babu</p>
+              <p>Zone: Tabor</p>
+              <div class="label-top">12 F</div>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-4 mt-4 mt-lg-4 menu-item filter-Antony filter-Jordan filter-1Km">
+            <div class="box h-100" data-aos="zoom-in" data-aos-delay="100">
+              <span>St.Antony</span>
+              <h3>Feast Day - JUN 13</h3>
+              <p>President: Byju Joseph </p>
+              <p>Secretary: Daphy Anthony </p>
+              <p>Treasurer: Jomy Jose</p>
+              <p>Zone: Jordan</p>
+              <div class="label-top">14 F</div>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-4 mt-4 mt-lg-4 menu-item filter-Thomas filter-Bethlehem filter-8Km">
+            <div class="box h-100" data-aos="zoom-in" data-aos-delay="100">
+              <span>St.Thomas</span>
+              <h3>Feast Day - JUL 03</h3>
+              <p>President: Antony jacob</p>
+              <p>Secretary: Steffy Davis</p>
+              <p>Treasurer: Jincy Nidish</p>
+              <p>Zone: Bethlehem</p>
+              <div class="label-top">29 F</div>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-4 mt-4 mt-lg-4 menu-item filter-Antony filter-Jordan filter-5Km">
+            <div class="box h-100" data-aos="zoom-in" data-aos-delay="100">
+              <span>St.Francis Assisi</span>
+              <h3>Feast Day - OCT 04</h3>
+              <p>President: Jospheena Anoop </p>
+              <p>Secretary: Anupa George </p>
+              <p>Treasurer: Sangeetha Mathachan</p>
+              <p>Zone: Jordan</p>
+              <div class="label-top">14 F</div>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-4 mt-4 mt-lg-4 menu-item filter-Infant filter-Jericho filter-5Km">
+            <div class="box h-100" data-aos="zoom-in" data-aos-delay="100">
+              <span>Infant Jesus</span>
+              <h3>Feast Day - FEB 14</h3>
+              <p>President: V K Johnson </p>
+              <p>Secretary: M K Varghese</p>
+              <p>Treasurer: Briston Joseph Tharayil</p>
+              <p>Zone: Jericho</p>
+              <div class="label-top">12 F</div>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-4 mt-4 mt-lg-4 menu-item filter-Chavara filter-Calvary filter-5Km">
+            <div class="box h-100" data-aos="zoom-in" data-aos-delay="100">
+              <span>St.Chavara</span>
+              <h3>Feast Day - JAN 03</h3>
+              <p>President: Joel Mathew Puthoorkara </p>
+              <p>Secretary: Rekha Jackson</p>
+              <p>Treasurer: Jenny Chacko Mandy</p>
+              <p>Zone: Calvary</p>
+              <div class="label-top">28 F</div>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-4 mt-4 mt-lg-4 menu-item filter-Goretti filter-Bethlehem filter-8Km">
+            <div class="box h-100" data-aos="zoom-in" data-aos-delay="100">
+              <span>St.Maria Goretti</span>
+              <h3>Feast Day - JUL 06</h3>
+              <p>President: Jiji Alapatte </p>
+              <p>Secretary: Bency Banjamin </p>
+              <p>Treasurer: Benny Varghese </p>
+              <p>Zone: Bethlehem</p>
+              <div class="label-top">33 F</div>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-4 mt-4 mt-lg-4 menu-item filter-George filter-Calvary filter-5Km">
+            <div class="box h-100" data-aos="zoom-in" data-aos-delay="100">
+              <span>St.George</span>
+              <h3>Feast Day - APR 23</h3>
+              <p>President: Vicky Robert </p>
+              <p>Secretary: Rekha jaison</p>
+              <p>Treasurer: Antony k v</p>
+              <p>Zone: Calvary</p>
+              <div class="label-top">21 F</div>
             </div>
           </div>
 
         </div>
-        <div class="row">
-          <div class="col-lg-3 col-md-3 mt-4 mt-lg-4">
-            <div class="box h-100" data-aos="zoom-in" data-aos-delay="100">
-              <span>Holy Cross</span>
-              <h4>Nazareth Zone</h4>
-              <p>President: Jose KL</p>
-              <p>Secretary: Mary Martha</p>
-              <p>Treasurer: George Mathur Jose</p>
-            </p>
-            </div>
-          </div>
-          <div class="col-lg-3 col-md-3 mt-4 mt-lg-4">
-            <div class="box h-100" data-aos="zoom-in" data-aos-delay="100">
-              <span>Sacred Heart</span>
-              <h4>Nazareth Zone</h4>
-              <p>President: Jose KL</p>
-              <p>Secretary: Mary Martha</p>
-              <p>Treasurer: George Mathur Jose</p>
-            </p>
-            </div>
-          </div>
-          <div class="col-lg-3 col-md-3 mt-4 mt-lg-4">
-            <div class="box h-100" data-aos="zoom-in" data-aos-delay="100">
-              <span>St. Thomas</span>
-              <h4>Nazareth Zone</h4>
-              <p>President: Jose KL</p>
-              <p>Secretary: Mary Martha</p>
-              <p>Treasurer: George Mathur Jose</p>
-            </p>
-            </div>
-          </div>
-          <div class="col-lg-3 col-md-3 mt-4 mt-lg-4">
-            <div class="box h-100" data-aos="zoom-in" data-aos-delay="100">
-              <span>St. Theresa</span>
-              <h4>Nazareth Zone</h4>
-              <p>President: Jose KL</p>
-              <p>Secretary: Mary Martha</p>
-              <p>Treasurer: George Mathur Jose</p>
-            </p>
-            </div>
-          </div>
 
-        </div>
       </div>
     </section><!-- End Why Us Section -->
 
@@ -204,20 +451,20 @@
         </div>
         <div class="row">
         
-          <div class="col-lg-4 col-lg-3 col-md-3">
+          <div class="col-lg-3 col-lg-3 col-md-3">
             <div class="info">
               <div class="open-hours">
                 <i class="bi bi-share-fill"></i>
                 <h4>Social Media</h4>
                 <p>
                     <a href="https://www.facebook.com/movyouth" class="facebook"><b class="bi bi-facebook"></b></a>
-                    <a href="https://www.youtube.com/@motherofvictoryshrinetikuj3128" class="youtube"><b class="bi bi-youtube"></b></a>
+                    <a href="https://www.youtube.com/@motherofvictoryshrinetikuj3128" target="_blank" rel="noopener noreferrer" class="youtube"><b class="bi bi-youtube"></b></a>
                 </p>
               </div>
             </div>
           </div>
 
-          <div class="col-lg-4 col-md-6">
+          <div class="col-lg-3 col-md-6">
             <div class="info">
               <div class="email">
                 <i class="bi bi-envelope"></i>
@@ -227,7 +474,7 @@
             </div>
           </div>
 
-          <div class="col-lg-4 col-lg-3 col-md-3">
+          <div class="col-lg-3 col-lg-3 col-md-3">
             <div class="info">
               <div class="phone">
                 <i class="bi bi-whatsapp"></i>
@@ -236,23 +483,32 @@
               </div>
             </div>
           </div>
+
+          <div class="col-lg-3 col-lg-3 col-md-3">
+            <div class="info">
+              <div class="phone">
+                <i class="bi bi-house"></i>
+                <h4>Address:</h4>
+                <p>27 Acre Kothari compound, Smt Gladys Alvares Road</p>
+                <p>Manpada, Behind D-Mart, Thane, Maharashtra 400610</p>
+              </div>
+            </div>
+          </div>
         
         </div>
       </div>
       <p><br></p>
-      <div data-aos="fade-up">
-        <iframe style="border:0; width: 100%; height: 350px;" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3767.1448538399263!2d72.96599057609362!3d19.232517782004486!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7bbdfee89d087%3A0x2fdcb9f9f27fdab5!2sMother%20Of%20Victory%20Shrine%2C%20Tikujiniwadi!5e0!3m2!1sen!2sin!4v1691221707090!5m2!1sen!2sin" frameborder="0" allowfullscreen></iframe>
-      </div>
+      
 
     </section><!-- End Contact Section -->
 
   </main><!-- End #main -->
-
+  
   <!-- ======= Footer ======= -->
   <footer id="footer">
     <div class="container">
       <div class="credits">
-        Developed with <i class="bi bi-heart-fill" style="color: red;"></i> by <a href="https://www.getitautomated.com/">Tom Thomas</a>
+        Developed with <i class="bi bi-heart-fill" style="color: red;"></i> by <a href="https://www.getitautomated.com/" target="_blank" rel="noopener noreferrer">Tom Thomas</a>
       </div>
     </div>
   </footer><!-- End Footer -->
@@ -270,6 +526,7 @@
 
   <!-- Template Main JS File -->
   <script src="assets/js/main.js"></script>
+  
      <!-- SIMPLE,HORIZONTAL, (vertical-remove .InlineLayout.) -->
      <script type="text/javascript">
       function googleTranslateElementInit() {
@@ -280,6 +537,10 @@
               'google_translate_element'
           ); }
     </script>
+     <script
+     src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCodNOAGOEUEcjBn8Wi72_1W3obL74EvEc&callback=initMap&v=weekly"
+     defer
+   ></script>
     <script type="text/javascript"
             src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit">
     </script>

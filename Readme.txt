@@ -9,3 +9,4 @@ PWA     - https://www.pwabuilder.com/
 
 Image Manipulation
 ffmpeg -i Einstein_500_459.jpg -vf scale=W*250:H*150 Einstein_250_150.png
+https://developer.mozilla.org/en-US/docs/Learn/HTML/Multimedia_and_embedding/Responsive_images

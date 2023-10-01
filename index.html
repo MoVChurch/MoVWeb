@@ -105,8 +105,9 @@
                     data-width="auto"
                     data-height="auto"
                     data-zoomable="true"
-                    data-draggable="true">
-                  <img src="https://lh3.googleusercontent.com/pw/ADCreHfyugKcQudISWQ2G2YGSr5mKZoQ9c-4qEAuCCqVRWs77Cyj95sR30EA-HR8aEyQ-FxeUpYOVTaOKrXcPz5iwkscBuAkAny16XaCIdNZvRhQV7d6pTuo7Wgr2iFiSNyysyZ8vYUzlVAHcZpUTJF8vsF8=w664-h664-s-no" alt="" class="img-fluid">
+                    data-draggable="true"
+                    id="roasry_month_img_a">
+                  <img src="https://lh3.googleusercontent.com/pw/ADCreHfyugKcQudISWQ2G2YGSr5mKZoQ9c-4qEAuCCqVRWs77Cyj95sR30EA-HR8aEyQ-FxeUpYOVTaOKrXcPz5iwkscBuAkAny16XaCIdNZvRhQV7d6pTuo7Wgr2iFiSNyysyZ8vYUzlVAHcZpUTJF8vsF8=w664-h664-s-no" alt="" class="img-fluid", id="roasry_month_img">
                 </a>
               </div>
               <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
@@ -771,6 +772,25 @@
               autoDisplay: false, includedLanguages: 'ml,mr,hi,ta'},
               'google_translate_element'
           ); }
+      list_of_images = [
+        "",
+        "https://lh3.googleusercontent.com/pw/ADCreHfyugKcQudISWQ2G2YGSr5mKZoQ9c-4qEAuCCqVRWs77Cyj95sR30EA-HR8aEyQ-FxeUpYOVTaOKrXcPz5iwkscBuAkAny16XaCIdNZvRhQV7d6pTuo7Wgr2iFiSNyysyZ8vYUzlVAHcZpUTJF8vsF8=w968-h968-s-no", //1
+        "https://lh3.googleusercontent.com/pw/ADCreHduNgt1xqdEXwwITYYmR4xmP7TJ6WD0SwS0CWapRX-nkySr4K4zQ6m6yj6irB2YPFrG9feoCo3M39bzuc6eK2vzlmLeoiJ9yXX8Bn7RnbI_tL0RdSoDNLPzKR-zfQtwueLN5uHFpO9xsWjVCMYZAHa3=w968-h968-s-no", //2
+        "https://lh3.googleusercontent.com/pw/ADCreHf-i2_PuK7T2AEu8J3ZkbjlmWO2S5uhU4ZMdXTBvx9wx6ciGTR5Sf8UKvXAJMoWQQe-Wg_qnFeu0yGncEdC7GrC_rSpHLGmzoUV0x0Czn1VBPW62hptBD4qXJUcNBow9NQ8T7kycsX5ID8WAGcSb5R2=w968-h968-s-no", //3
+        "https://lh3.googleusercontent.com/pw/ADCreHcPLJnsObXa13TMMJ9RgnWgo5MLWg1K3jo1IaAaVInVgi2SFh9oQaxaxUc3UzFOBdgN4RGj7O9RbjKtBkKElU_E5p_Qb0Mxf-Q2QKTca6a8l-Da6H_GyGBCFCklWzc75Yp4chphkq-sJbWe_4Lyxfg-=w968-h968-s-no", //4
+        "https://lh3.googleusercontent.com/pw/ADCreHc21AayJZlAaQzQYGykBwX68oFT26fX3FTSeTvRN0qQWZkbHTQeN_ObLUCGUbyussHHvGrhslj5U_xmT5DsiHH5prASBZ0hPQ9gSRIWno2eaI0G7nY4JxnwXCqp0ufDnf_-xfuPx2wqxuN_LtjyxkCE=w968-h968-s-no", //5
+
+      ]
+      today_date_obj = new Date()
+      todays_date = today_date_obj.getDate()
+      todays_rosary_link = list_of_images[todays_date]
+      roasry_month_img_a = document.getElementById("roasry_month_img_a")
+      roasry_month_img = document.getElementById("roasry_month_img")
+      roasry_month_img_a.href = todays_rosary_link
+      roasry_month_img.src = todays_rosary_link
+      
+
+
     </script>
     <script type="text/javascript"
             src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit">

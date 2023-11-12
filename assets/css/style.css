@@ -2118,3 +2118,85 @@ mark {
   background: #1a1814;
   color: rgba(255, 255, 255, 0.8);
 }
+
+/*--------------------------------------------------------------
+# Team - Day Highlights MoVFeast - /demo/Presento/
+--------------------------------------------------------------*/
+.highlight .member {
+  margin-bottom: 20px;
+  overflow: hidden;
+  border-radius: 5px;
+  background: #fff;
+  position: relative;
+}
+
+.highlight .member .member-img {
+  position: relative;
+  overflow: hidden;
+}
+
+.highlight .member .social {
+  position: absolute;
+  left: 0;
+  bottom: 30px;
+  right: 0;
+  opacity: 0;
+  transition: ease-in-out 0.3s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.highlight .member .social a {
+  transition: color 0.3s;
+  color: #111111;
+  margin: 0 3px;
+  border-radius: 50px;
+  width: 36px;
+  height: 36px;
+  background: #e03a3c;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: ease-in-out 0.3s;
+  color: #fff;
+}
+
+.highlight .member .social a:hover {
+  background: #111111;
+}
+
+.highlight .member .social i {
+  font-size: 18px;
+  line-height: 0;
+}
+
+.highlight .member .member-info {
+  padding: 25px 15px;
+}
+
+.highlight .member .member-info h4 {
+  font-weight: 700;
+  margin-bottom: 5px;
+  font-size: 18px;
+  color: #111111;
+}
+
+.highlight .member .member-info span {
+  display: block;
+  font-size: 13px;
+  font-weight: 400;
+  color: #aaaaaa;
+}
+
+.highlight .member .member-info p {
+  font-style: italic;
+  font-size: 14px;
+  line-height: 26px;
+  color: #777777;
+}
+
+.highlight .member .social {
+  opacity: 1;
+  bottom: 15px;
+}

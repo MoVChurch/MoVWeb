@@ -91,6 +91,22 @@
   </header><!-- End Header -->
 
   <!-- ======= Hero Section ======= -->
+  <!-- START # MOV Feast Declaration -->
+  <div class="modal fade" id="myModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">           
+        <div class="modal-body">
+          <div class="card"><img src="assets/img/motherFocus.webp" class="card-img-top" alt="Ma Mariam"></div>
+        </div>
+        <div class="modal-footer">
+          <p class="text-center" style="color: black;">Mother of Victory Shrine <mark><b>FEAST</b></mark> 2023</p>
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <a href="movfeast.html" class="btn btn-primary" role="button">Take Me</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- END # MOV Feast Declaration -->
   <section id="hero" class="d-flex align-items-center">
     <div class="container position-relative text-center text-lg-start" data-aos="zoom-in" data-aos-delay="100">
       <!--- Rosary Month Pop Up -->
@@ -794,6 +810,10 @@
   <script src="assets/js/main.js"></script>
    <!-- SIMPLE,HORIZONTAL, (vertical-remove .InlineLayout.) -->
    <script type="text/javascript">
+      var myModal = new bootstrap.Modal(document.getElementById('myModal'), {})
+      myModal.toggle()
+     
+      
       function googleTranslateElementInit() {
           new google.translate.TranslateElement(
               {pageLanguage: 'en', layout: 

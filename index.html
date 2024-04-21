@@ -92,6 +92,26 @@
   </header><!-- End Header -->
 
   <!-- ======= Hero Section ======= -->
+  <div class="modal fade" id="myModal" data-bs-backdrop="true" data-bs-keyboard="true" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" style="color: black;"><u>Summer Timings</u><br><small class="text-muted"><b>Malayalam </b>Holy Qurbana</small></h5>
+        
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>           
+        <div class="modal-body" style="color: black;">
+          <p>Monday,Thursday: Only evening 7 PM</p>
+          <p>Tuesday,Saturday: Only morning 7 AM</p>
+          <p>Wednesday,Friday: Both times 7 AM, 7 PM</p>
+          <p><b>Sunday:</b> Morning 8:30 AM, Evening 7 PM</p>
+        </div>
+        <div class="modal-footer">
+        	<small class="text-muted">These timings are until the start of June.</small>
+      </div>
+      </div>
+    </div>
+  </div>
   <!-- <div class="modal fade" id="myModal" data-bs-backdrop="true" data-bs-keyboard="true" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
     <div class="modal-dialog">
       <div class="modal-content">           
@@ -796,8 +816,8 @@
   <script src="assets/js/main.js"></script>
    <!-- SIMPLE,HORIZONTAL, (vertical-remove .InlineLayout.) -->
    <script type="text/javascript">
-      //var myModal = new bootstrap.Modal(document.getElementById('myModal'), {})
-      //myModal.toggle() 
+      var myModal = new bootstrap.Modal(document.getElementById('myModal'), {})
+      myModal.toggle() 
 
        fetchData_NoticeBoard();
 	         

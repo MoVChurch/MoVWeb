@@ -1,2 +1,0 @@
-{"name":"Mother of Victory Shrine, Tikujiniwadi","short_name":"MoV","icons":[{"src":"/android-chrome-192x192.png","sizes":"192x192","type":"image/png"},{"src":"/android-chrome-512x512.png","sizes":"512x512","type":"image/png","purpose": "any"}],"theme_color":"#cac4c4","background_color":"#343a40","display":"standalone","id": "movAug23-1",
-  "description": "Church Website for Mother of Victory Shrine, Tikujiniwadi, Thane","start_url": "https://motherofvictory.org", "scope": ".", "lang": "en"}

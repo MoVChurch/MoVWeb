@@ -22,7 +22,7 @@ module.exports = {
 			options: {
 				cacheName: 'html-cache',
 				expiration: {
-					maxAgeSeconds: 6 * 60 * 60, // Optional: cache for 6 hours
+					maxAgeSeconds: 300, // Optional: cache for 15min
 				},
 				cacheableResponse: {
 					statuses: [0, 200],  // Cache successful responses

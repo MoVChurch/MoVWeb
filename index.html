@@ -55,6 +55,7 @@
           <li><a class="nav-link scrollto active" href="#hero">Home</a></li>
           <li><a class="nav-link scrollto" href="#about">About</a></li>
           <li><a class="nav-link scrollto" href="#specials">Events</a></li>
+          <li><a class="nav-link" href="jubilee2025.html">Jubilee 2025</a></li>
           <li><a class="nav-link" href="unit.html">Units</a></li>
           <li><a class="nav-link" href="https://linktr.ee/motherofvictoryshrine" target="_blank" rel="noopener noreferrer">Media</a></li>
           <li class="dropdown"><a href="#"><span>Prayers</span> <i class="bi bi-chevron-down"></i></a>
@@ -74,6 +75,21 @@
 
     </div>
   </header><!-- End Header -->
+
+  <div class="modal fade" id="myModal" data-bs-backdrop="true" data-bs-keyboard="true" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">           
+        <div class="modal-body">
+          <!-- <div class="card"><img src="https://lh3.googleusercontent.com/pw/AP1GczOQk59Rixj6f7IvweAPRkN-SL0Rf7DYgN4sGObof2qMVkjCIKQFfqRPfcby3jsgumljb-GpK1Wc0c4SESsjLZWJwcGtw1qjICgduS6rBaHOVHdZX8zJnWGeWfU-x1UcYKonvCIaaa1PV-tFepoBihEO=w995-h654-s-no-gm" class="card-img-top" alt="MoVFeast2024"></div> -->
+          <div class="card"><img src="assets/img/jubileelogo.png" class="card-img-top" alt="Jubilee2025"></div>
+        </div>
+        <div class="modal-footer">
+          <p class="text-center" style="color: black;">Plenary Indulgence @ MoV Shrine <mark><b>JUBILEE</b></mark></p>
+          <a href="jubilee2025.html" class="btn btn-primary" role="button">Click</a>
+        </div>
+      </div>
+    </div>
+  </div>
 
   <section id="hero" class="d-flex align-items-center">
     <div class="container position-relative text-center text-lg-start" data-aos="zoom-in" data-aos-delay="100">
@@ -631,8 +647,8 @@
   <script src="assets/js/main.js"></script>
    <!-- SIMPLE,HORIZONTAL, (vertical-remove .InlineLayout.) -->
    <script type="text/javascript">
-      //var myModal = new bootstrap.Modal(document.getElementById('myModal'), {})
-      //myModal.toggle() 
+      var myModal = new bootstrap.Modal(document.getElementById('myModal'), {})
+      myModal.toggle() 
 
        fetchData_NoticeBoard();
 	         

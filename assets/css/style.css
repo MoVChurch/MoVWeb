@@ -1399,6 +1399,33 @@ section {
   background: #d3af71;
 }
 
+/* Restrict the height of the logo and make it responsive */
+.book-a-table .logo-img {
+  max-height: 300px; /* Increased height to 300px */
+  width: auto; /* Maintain aspect ratio */
+  float: left; /* Float the image to the left */
+  margin-right: 10px; /* Add some space between the image and the text */
+  margin-bottom: 3px; /* Space below the image for better readability *//
+}
+
+/* Styling for the blockquote */
+.book-a-table blockquote {
+  margin-left: 0;
+  padding-left: 0;
+}
+
+/* Optional: Add spacing to blockquote text */
+.book-a-table blockquote p {
+  margin: 0;
+  line-height: 2;
+  font-size: 14px; 
+}
+
+/* Clear float after the image to avoid layout issues */
+.book-a-table figure {
+  clear: both;
+  padding-top: 0;
+}
 /*--------------------------------------------------------------
 # Testimonials
 --------------------------------------------------------------*/

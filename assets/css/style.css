@@ -832,6 +832,29 @@ section {
 }
 
 /*--------------------------------------------------------------
+# Prayer
+--------------------------------------------------------------*/
+/* Default multi-column layout (for desktop) */
+.prayer .booklet-page {
+  column-count: 2;
+  column-gap: 30px;  /* Adjust the space between columns */
+}
+
+/* 3-column layout for larger desktops */
+@media (min-width: 1200px) {
+  .prayer .booklet-page {
+      column-count: 3;
+  }
+}
+
+/* Mobile (single-column) layout */
+@media (max-width: 768px) {
+  .prayer .booklet-page {
+      column-count: 1;
+  }
+}
+
+/*--------------------------------------------------------------
 # About
 --------------------------------------------------------------*/
 .about {

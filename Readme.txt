@@ -10,3 +10,9 @@ PWA     - https://www.pwabuilder.com/
 Image Manipulation
 ffmpeg -i Einstein_500_459.jpg -vf scale=W*250:H*150 Einstein_250_150.png
 https://developer.mozilla.org/en-US/docs/Learn/HTML/Multimedia_and_embedding/Responsive_images
+
+As the website is PWA, run the following WorkBox command for PWA to work correctly after every commit.
+workbox generateSW ./workbox-config.js
+
+Make sure to edit sw.js to point to workbox.js and not the newly created hash file. 
+Index.html is taken out from the globpatterns, and seems to be working.

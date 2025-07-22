@@ -1,7 +1,6 @@
 module.exports = {
 	globDirectory: '.',
 	globPatterns: [
-		'index.html',          // Precaching specific HTML file
 		'prayers.html',        // Precaching specific HTML file
 		'about.html',          // Precaching specific HTML file
 		'assets/**/*.js',      // Precaching all JavaScript files in assets directory
@@ -20,10 +19,10 @@ module.exports = {
 			urlPattern: ({request}) => request.destination === 'document',
 			handler: 'NetworkFirst',
 			options: {
-				cacheName: 'html-cache-v2',
-				expiration: {
-					maxAgeSeconds: 300, // Optional: cache for 15min
-				},
+				cacheName: 'html-cache-v4',
+				// expiration: {
+				// 	maxAgeSeconds: 300, // Optional: cache for 15min
+				// },
 				cacheableResponse: {
 					statuses: [0, 200],  // Cache successful responses
 				},
@@ -34,7 +33,7 @@ module.exports = {
 			urlPattern: ({request}) => request.destination === 'script' || request.destination === 'style' || request.destination === 'image' || request.destination === 'font',
 			handler: 'CacheFirst',
 			options: {
-				cacheName: 'global-cache-v2',
+				cacheName: 'global-cache-v4',
 				expiration: {
 					maxAgeSeconds: 30 * 24 * 60 * 60 // 30 days
 
@@ -49,7 +48,7 @@ module.exports = {
 			urlPattern: new RegExp('^https://script.google.com'),
 			handler: 'NetworkFirst',
 			options: {
-				cacheName: 'google-scripts-cache-v2',
+				cacheName: 'google-scripts-cache-v4',
 				networkTimeoutSeconds: 15,  // Optional: Time out if no response from network within 15 seconds
 				expiration: {
 					maxAgeSeconds: 12 * 60 * 60, // 12 hours

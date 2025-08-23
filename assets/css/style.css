@@ -33,7 +33,13 @@ h5,
 h6 {
   font-family: "Playfair Display", serif;
 }
-
+#myModal h5.card-title,
+#myModal .modal-title {
+  font-family: 'Poppins', 'Open Sans', sans-serif;
+  font-weight: 400;       /* softer than default bold */
+  letter-spacing: 0.5px;  /* adds a little breathing space */
+  color: #2c3e50;         /* softer than pure black */
+}
 /*--------------------------------------------------------------
 # Preloader
 --------------------------------------------------------------*/

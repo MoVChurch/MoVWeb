@@ -19,7 +19,7 @@ module.exports = {
 			urlPattern: ({request}) => request.destination === 'document',
 			handler: 'NetworkFirst',
 			options: {
-				cacheName: 'html-cache-v5',
+				cacheName: 'html-cache-v6',
 				// expiration: {
 				// 	maxAgeSeconds: 300, // Optional: cache for 15min
 				// },
@@ -33,7 +33,7 @@ module.exports = {
 			urlPattern: ({request}) => request.destination === 'script' || request.destination === 'style' || request.destination === 'image' || request.destination === 'font',
 			handler: 'CacheFirst',
 			options: {
-				cacheName: 'global-cache-v5',
+				cacheName: 'global-cache-v6',
 				expiration: {
 					maxAgeSeconds: 30 * 24 * 60 * 60 // 30 days
 

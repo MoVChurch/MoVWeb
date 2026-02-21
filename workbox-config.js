@@ -30,8 +30,12 @@ module.exports = {
 		},
 		{
 			// Cache JS, CSS, images, etc.
+			// --- User Experience Timeline
+			//	    First visit: Fetches new image, caches it, displays immediately.
+			//	    Update occurs: Next load shows cached version instantly; new version downloads silently and replaces cache.
+			//	    Subsequent loads: New image appears instantly from updated cache (up to 30 days).
 			urlPattern: ({request}) => request.destination === 'script' || request.destination === 'style' || request.destination === 'image' || request.destination === 'font',
-			handler: 'CacheFirst',
+			handler: 'StaleWhileRevalidate',
 			options: {
 				cacheName: 'global-cache-v7',
 				expiration: {
@@ -48,7 +52,7 @@ module.exports = {
 			urlPattern: new RegExp('^https://script.google.com'),
 			handler: 'NetworkFirst',
 			options: {
-				cacheName: 'google-scripts-cache-v5',
+				cacheName: 'google-scripts-cache-v7',
 				networkTimeoutSeconds: 15,  // Optional: Time out if no response from network within 15 seconds
 				expiration: {
 					maxAgeSeconds: 12 * 60 * 60, // 12 hours

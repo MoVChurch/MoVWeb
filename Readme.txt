@@ -16,3 +16,10 @@ workbox generateSW ./workbox-config.js
 
 Make sure to edit sw.js to point to workbox.js and not the newly created hash file. 
 Index.html is taken out from the globpatterns, and seems to be working.
+
+
+- Change any files, example update or add Image
+- go into WorkBox-config.js and update the cache names.
+- run => workbox generateSW ./workbox-config.js
+- copy the workbox-32423as.js contents into workbox.js
+- edit sw.js to point to workbox.js and not the newly created hash file.

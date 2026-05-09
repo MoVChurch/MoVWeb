@@ -2006,111 +2006,8 @@ section {
 # Vocation Section
 --------------------------------------------------------------*/
 #Vocation {
-  padding: 60px 0 0;
+  padding: 30px 0 0;
   overflow: hidden;
-}
-/*--------------------------------------------------------------
-# Speakers Section
---------------------------------------------------------------*/
-#speakers {
-  padding: 0 0 30px 0;
-}
-
-#speakers .speaker {
-  position: relative;
-  overflow: hidden;
-  margin-bottom: 30px;
-}
-
-#speakers .speaker .details {
-  background: rgba(6, 12, 34, 0.76);
-  position: absolute;
-  left: 0;
-  bottom: -40px;
-  right: 0;
-  text-align: center;
-  padding-top: 10px;
-  transition: all 300ms cubic-bezier(0.645, 0.045, 0.355, 1);
-}
-
-#speakers .speaker .details h3 {
-  color: #fff;
-  font-size: 22px;
-  font-weight: 600;
-  margin-bottom: 15px;  /* this was customized after removing socials*/
-}
-
-#speakers .speaker .details p {
-  color: #fff;
-  font-size: 15px;
-  margin-bottom: 10px;
-  font-style: italic;
-}
-
-#speakers .speaker .details .social {
-  height: 40px;
-}
-
-#speakers .speaker .details .social i {
-  line-height: 0;
-  margin: 0 2px;
-}
-
-#speakers .speaker .details a {
-  color: #fff;
-}
-
-#speakers .speaker .details a:hover {
-  color: #f82249;
-}
-
-#speakers .speaker:hover .details {
-  bottom: 0;
-}
-
-#speakers-details {
-  padding: 60px 0;
-}
-
-#speakers-details .details h2 {
-  color: #112363;
-  font-size: 28px;
-  font-weight: 700;
-  margin-bottom: 10px;
-}
-
-#speakers-details .details .social {
-  margin-bottom: 15px;
-}
-
-#speakers-details .details .social a {
-  background: #e9edfb;
-  color: #112363;
-  line-height: 1;
-  display: inline-block;
-  text-align: center;
-  border-radius: 50%;
-  width: 36px;
-  height: 36px;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-}
-
-#speakers-details .details .social a:hover {
-  background: #f82249;
-  color: #fff;
-}
-
-#speakers-details .details .social a i {
-  font-size: 16px;
-  line-height: 0;
-}
-
-#speakers-details .details p {
-  color: #112363;
-  font-size: 15px;
-  margin-bottom: 10px;
 }
 
 /*--------------------------------------------------------------
@@ -2248,4 +2145,307 @@ mark {
 .highlight .member .social {
   opacity: 1;
   bottom: 15px;
+}
+ /* ── Shepherds Timeline Section ─────────────────────────────── */
+    #Shepherds {
+      padding: 60px 0;
+    }
+
+    /* Era band */
+    .era-band {
+      margin-bottom: 48px;
+    }
+
+    .era-header {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      margin-bottom: 20px;
+    }
+
+    .era-years {
+      font-family: 'Poppins', sans-serif;
+      font-size: 14px;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      color: #fff;
+      background: var(--color-primary, #ce1212);
+      padding: 4px 14px;
+      border-radius: 20px;
+      white-space: nowrap;
+    }
+
+    .era-divider {
+      flex: 1;
+      height: 1px;
+      background: #e8e8e8;
+    }
+
+    /* Role sub-heading */
+    .role-heading {
+      font-family: 'Poppins', sans-serif;
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      margin-bottom: 12px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .role-heading.vicar-head {
+      color: #6a4c93;
+    }
+
+    .role-heading.asst-head {
+      color: #1f7a5c;
+    }
+
+    .role-heading::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: currentColor;
+      opacity: 0.2;
+    }
+
+    /* Priest card — clickable */
+    .priest-card {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 10px 14px;
+      background: #fff;
+      border: 1px solid #eee;
+      border-radius: 10px;
+      margin-bottom: 8px;
+      cursor: pointer;
+      text-decoration: none;
+      color: inherit;
+      transition: box-shadow 0.2s ease, transform 0.2s ease;
+      position: relative;
+    }
+
+    .priest-card:hover {
+      box-shadow: 0 4px 18px rgba(0,0,0,0.09);
+      transform: translateY(-2px);
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .priest-card:focus {
+      outline: 2px solid var(--color-primary, #ce1212);
+      outline-offset: 2px;
+    }
+
+    /* Thumbnail inside the card */
+    .priest-thumb {
+      width: 52px;
+      height: 52px;
+      border-radius: 50%;
+      object-fit: cover;
+      object-position: top center;
+      flex-shrink: 0;
+      border: 2px solid #f0f0f0;
+    }
+
+    /* Fallback avatar when no image */
+    .priest-avatar-fallback {
+      width: 52px;
+      height: 52px;
+      border-radius: 50%;
+      flex-shrink: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Poppins', sans-serif;
+      font-size: 14px;
+      font-weight: 600;
+    }
+
+    .priest-card.vicar-card .priest-avatar-fallback {
+      background: #ede7f6;
+      color: #6a4c93;
+    }
+
+    .priest-card.asst-card .priest-avatar-fallback {
+      background: #e0f2f1;
+      color: #1f7a5c;
+    }
+
+    /* Left accent bar */
+    .priest-card.vicar-card {
+      border-left: 3px solid #6a4c93;
+    }
+
+    .priest-card.asst-card {
+      border-left: 3px solid #1f7a5c;
+    }
+
+    .priest-info {
+      flex: 1;
+      min-width: 0;
+    }
+
+    .priest-name {
+      font-family: 'Poppins', sans-serif;
+      font-size: 15px;
+      font-weight: 600;
+      color: #222;
+      margin: 0 0 2px;
+      line-height: 1.3;
+    }
+
+    .priest-tenure {
+      font-size: 13px;
+      color: #777;
+      margin: 0;
+      line-height: 1.4;
+    }
+
+    /* Role pill on the card */
+    .priest-role-pill {
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 0.05em;
+      padding: 2px 8px;
+      border-radius: 12px;
+      white-space: nowrap;
+      align-self: flex-start;
+      margin-top: 2px;
+    }
+
+    .vicar-pill {
+      background: #ede7f6;
+      color: #6a4c93;
+    }
+
+    .asst-pill {
+      background: #e0f2f1;
+      color: #1f7a5c;
+    }
+
+    /* Click hint icon */
+    .card-zoom-hint {
+      color: #bbb;
+      font-size: 16px;
+      flex-shrink: 0;
+      transition: color 0.2s;
+    }
+
+    .priest-card:hover .card-zoom-hint {
+      color: #888;
+    }
+
+    /* Legend */
+    .shepherd-legend {
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+      margin-bottom: 32px;
+    }
+
+    .legend-item {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 12px;
+      color: #555;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    .legend-dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      flex-shrink: 0;
+    }
+
+    .dot-vicar { background: #6a4c93; }
+    .dot-asst  { background: #1f7a5c; }
+
+    /* Transition note when someone moved roles */
+    .role-transition-note {
+      font-size: 12px;
+      color: #999;
+      font-style: italic;
+    }
+
+    /* Responsive: on small screens stack columns */
+    @media (max-width: 575px) {
+      .priest-name { font-size: 12.5px; }
+      .priest-tenure { font-size: 11px; }
+    }
+
+/* ── MoVian Vocation Cards ─────────────────────────── */
+.movian-card {
+  display: block;
+  position: relative;
+  border-radius: 14px;
+  overflow: hidden;
+  aspect-ratio: 3 / 4;
+  background: #d6cfc8;
+  text-decoration: none;
+  cursor: pointer;
+  transition: box-shadow 0.3s ease;
+}
+
+.movian-card:hover {
+  box-shadow: 0 8px 32px rgba(0,0,0,0.18);
+  text-decoration: none;
+}
+
+.movian-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top center;
+  display: block;
+  transition: transform 0.45s ease;
+}
+
+.movian-card:hover img {
+  transform: scale(1.05);
+}
+
+.movian-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: linear-gradient(
+    to top,
+    rgba(10,10,10,0.85) 0%,
+    rgba(10,10,10,0.25) 65%,
+    transparent 100%
+  );
+  padding: 48px 16px 16px;
+}
+
+.movian-name {
+  font-family: 'Playfair Display', serif;
+  font-size: 16px;
+  font-weight: 600;
+  color: #ffffff;
+  margin: 0 0 6px;
+  line-height: 1.25;
+}
+
+.movian-meta {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.movian-year {
+  font-family: 'Poppins', sans-serif;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.07em;
+  color: #f0d060;
+  background: rgba(255,255,255,0.07);
+  border: 1px solid rgba(240,208,96,0.3);
+  padding: 2px 9px;
+  border-radius: 10px;
 }

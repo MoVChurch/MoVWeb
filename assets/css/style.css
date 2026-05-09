@@ -2534,8 +2534,18 @@ mark {
       overflow-y: auto;
       min-width: 180px;
     }
-    .filters-bar #menu-flters { padding: 0; margin: 0; list-style: none; }
-    .filters-bar #menu-flters li {
+    /* Update selectors to target all three unique IDs */
+    .filters-bar #menu-flters-unit,
+    .filters-bar #menu-flters-dist,
+    .filters-bar #menu-flters-zone { 
+      padding: 0; 
+      margin: 0; 
+      list-style: none; 
+    }
+
+    .filters-bar #menu-flters-unit li,
+    .filters-bar #menu-flters-dist li,
+    .filters-bar #menu-flters-zone li {
       padding: 8px 18px;
       font-family: 'Poppins', sans-serif;
       font-size: 14px;
@@ -2543,9 +2553,17 @@ mark {
       cursor: pointer;
       transition: all 0.2s;
     }
-    .filters-bar #menu-flters li:hover,
-    .filters-bar #menu-flters li.filter-active { color: #cda45e; background: rgba(205,164,94,0.08); }
- 
+
+    .filters-bar #menu-flters-unit li:hover,
+    .filters-bar #menu-flters-unit li.filter-active,
+    .filters-bar #menu-flters-dist li:hover,
+    .filters-bar #menu-flters-dist li.filter-active,
+    .filters-bar #menu-flters-zone li:hover,
+    .filters-bar #menu-flters-zone li.filter-active { 
+      color: #cda45e; 
+      background: rgba(205,164,94,0.08); 
+    }
+
     /* ── Unit Cards ─────────────────────────────────── */
     .unit-card {
       background: #1a1814;

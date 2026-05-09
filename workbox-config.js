@@ -19,7 +19,7 @@ module.exports = {
 			urlPattern: ({request}) => request.destination === 'document',
 			handler: 'NetworkFirst',
 			options: {
-				cacheName: 'html-cache-v7',
+				cacheName: 'html-cache-v8',
 				// expiration: {
 				// 	maxAgeSeconds: 300, // Optional: cache for 15min
 				// },
@@ -37,7 +37,7 @@ module.exports = {
 			urlPattern: ({request}) => request.destination === 'script' || request.destination === 'style' || request.destination === 'image' || request.destination === 'font',
 			handler: 'StaleWhileRevalidate',
 			options: {
-				cacheName: 'global-cache-v7',
+				cacheName: 'global-cache-v8',
 				expiration: {
 					maxAgeSeconds: 30 * 24 * 60 * 60 // 30 days
 
@@ -52,7 +52,7 @@ module.exports = {
 			urlPattern: new RegExp('^https://script.google.com'),
 			handler: 'NetworkFirst',
 			options: {
-				cacheName: 'google-scripts-cache-v7',
+				cacheName: 'google-scripts-cache-v8',
 				networkTimeoutSeconds: 15,  // Optional: Time out if no response from network within 15 seconds
 				expiration: {
 					maxAgeSeconds: 12 * 60 * 60, // 12 hours

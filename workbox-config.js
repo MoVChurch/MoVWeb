@@ -19,7 +19,7 @@ module.exports = {
 			urlPattern: ({request}) => request.destination === 'document',
 			handler: 'NetworkFirst',
 			options: {
-				cacheName: 'html-cache-v8',
+				cacheName: 'html-cache-v9',
 				// expiration: {
 				// 	maxAgeSeconds: 300, // Optional: cache for 15min
 				// },
